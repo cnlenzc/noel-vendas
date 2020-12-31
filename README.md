@@ -1,6 +1,6 @@
-# A68 (a68)
+# genial-vendas (genial-vendas)
 
-A68 descricao
+genial-vendas descricao
 
 ## Install the dependencies
 ```bash

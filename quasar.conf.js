@@ -136,9 +136,9 @@ module.exports = function (ctx) {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: 'A68',
-        short_name: 'A68',
-        description: 'A68 descricao',
+        name: 'genial-vendas',
+        short_name: 'genial-vendas',
+        description: 'genial-vendas descricao',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
@@ -203,7 +203,7 @@ module.exports = function (ctx) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'a68'
+        appId: 'genial-vendas'
       },
 
       // More info: https://quasar.dev/quasar-cli/developing-electron-apps/node-integration
