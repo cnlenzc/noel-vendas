@@ -1,6 +1,6 @@
-# genial-vendas (genial-vendas)
+# noel-vendas
 
-genial-vendas descricao
+Um jeito simples de vender a administrar seu negócio
 
 ## Install the dependencies
 ```bash

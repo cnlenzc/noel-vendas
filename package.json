@@ -1,8 +1,8 @@
 {
-  "name": "genial-vendas",
+  "name": "noel-vendas",
   "version": "0.0.1",
-  "description": "genial-vendas descricao",
-  "productName": "genial-vendas",
+  "description": "noel-vendas descricao",
+  "productName": "noel-vendas",
   "author": "Carlos",
   "private": true,
   "scripts": {

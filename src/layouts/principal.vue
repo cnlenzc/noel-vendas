@@ -12,7 +12,7 @@
           @click="leftDrawer = !leftDrawer"
         />
         <q-toolbar-title>
-          Genial vendas
+          noel vendas
         </q-toolbar-title>
       </q-toolbar>
 
