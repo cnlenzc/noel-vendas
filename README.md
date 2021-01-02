@@ -1,6 +1,6 @@
 # noel-vendas
 
-Um jeito simples de vender a administrar seu negócio
+Um jeito simples administrar seu negócio
 
 ## Install the dependencies
 ```bash

@@ -1,8 +1,9 @@
 {
   "name": "noel-vendas",
   "version": "0.0.1",
-  "description": "noel-vendas descricao",
-  "productName": "noel-vendas",
+  "description": "Um jeito simples administrar seu negócio",
+  "main": "server.js",
+  "productName": "noel vendas",
   "author": "Carlos",
   "private": true,
   "scripts": {
@@ -43,8 +44,8 @@
     "last 5 Opera versions"
   ],
   "engines": {
-    "node": ">= 10.18.1",
-    "npm": ">= 6.13.4",
+    "node": ">= 14.15.1",
+    "npm": ">= 6.14.9",
     "yarn": ">= 1.21.1"
   }
 }
