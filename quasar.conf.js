@@ -8,9 +8,6 @@
 /* eslint-env node */
 
 module.exports = function (ctx) {
-  console.log(''.padEnd(40, '#'))
-  console.log(ctx)
-  console.log(''.padEnd(40, '#'))
   return {
     // https://quasar.dev/quasar-cli/supporting-ts
     supportTS: false,
@@ -66,19 +63,19 @@ module.exports = function (ctx) {
       // extractCSS: false,
 
       beforeDev ({ quasarConf }) {
-        console.log(new Date().toLocaleString(), 'beforeDev '.padEnd(40, '#'))
+        console.log(new Date().toLocaleString(), 'beforeDev')
       },
 
       afterDev ({ quasarConf }) {
-        console.log(new Date().toLocaleString(), 'afterDev '.padEnd(40, '#'))
+        console.log(new Date().toLocaleString(), 'afterDev')
       },
 
       beforeBuild ({ quasarConf }) {
-        console.log(new Date().toLocaleString(), 'beforeBuild '.padEnd(40, '#'))
+        console.log(new Date().toLocaleString(), 'beforeBuild')
       },
 
       afterBuild ({ quasarConf }) {
-        console.log(new Date().toLocaleString(), 'afterBuild '.padEnd(40, '#'))
+        console.log(new Date().toLocaleString(), 'afterBuild')
       },
 
       // https://quasar.dev/quasar-cli/handling-webpack
