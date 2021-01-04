@@ -69,7 +69,7 @@
 
 @charset "UTF-8";
 /*!
- * * Quasar Framework v1.14.7
+ * * Quasar Framework v1.15.0
  * * (c) 2015-present Razvan Stoenescu
  * * Released under the MIT License.
  * */
@@ -2397,10 +2397,10 @@ body.q-ios-padding .q-dialog__inner > div {
   right: calc(-100% / 3);
   transition: transform 0.36s cubic-bezier(0.4, 0, 0.2, 1), right 0.396s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.q-field--focused .q-field__label {
+.q-field--highlighted .q-field__label {
   color: currentColor;
 }
-.q-field--focused .q-field__shadow {
+.q-field--highlighted .q-field__shadow {
   opacity: 0.5;
 }
 .q-field--filled .q-field__control {
@@ -2428,17 +2428,17 @@ body.q-ios-padding .q-dialog__inner > div {
 .q-field--filled.q-field--rounded .q-field__control {
   border-radius: 28px 28px 0 0;
 }
-.q-field--filled.q-field--focused .q-field__control:before {
+.q-field--filled.q-field--highlighted .q-field__control:before {
   opacity: 1;
   background: rgba(0, 0, 0, 0.12);
 }
-.q-field--filled.q-field--focused .q-field__control:after {
+.q-field--filled.q-field--highlighted .q-field__control:after {
   transform: scale3d(1, 1, 1);
 }
 .q-field--filled.q-field--dark .q-field__control, .q-field--filled.q-field--dark .q-field__control:before {
   background: rgba(255, 255, 255, 0.07);
 }
-.q-field--filled.q-field--dark.q-field--focused .q-field__control:before {
+.q-field--filled.q-field--dark.q-field--highlighted .q-field__control:before {
   background: rgba(255, 255, 255, 0.1);
 }
 .q-field--filled.q-field--readonly .q-field__control:before {
@@ -2471,10 +2471,10 @@ body.q-ios-padding .q-dialog__inner > div {
 .q-field--outlined.q-field--rounded .q-field__control {
   border-radius: 28px;
 }
-.q-field--outlined.q-field--focused .q-field__control:hover:before {
+.q-field--outlined.q-field--highlighted .q-field__control:hover:before {
   border-color: transparent;
 }
-.q-field--outlined.q-field--focused .q-field__control:after {
+.q-field--outlined.q-field--highlighted .q-field__control:after {
   border-color: currentColor;
   border-width: 2px;
   transform: scale3d(1, 1, 1);
@@ -2499,7 +2499,7 @@ body.q-ios-padding .q-dialog__inner > div {
   background: currentColor;
   transition: transform 0.36s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.q-field--standard.q-field--focused .q-field__control:after {
+.q-field--standard.q-field--highlighted .q-field__control:after {
   transform: scale3d(1, 1, 1);
 }
 .q-field--standard.q-field--readonly .q-field__control:before {
@@ -2514,7 +2514,7 @@ body.q-ios-padding .q-dialog__inner > div {
 .q-field--dark .q-field__native, .q-field--dark .q-field__prefix, .q-field--dark .q-field__suffix, .q-field--dark .q-field__input {
   color: #fff;
 }
-.q-field--dark:not(.q-field--focused) .q-field__label, .q-field--dark .q-field__marginal, .q-field--dark .q-field__bottom {
+.q-field--dark:not(.q-field--highlighted) .q-field__label, .q-field--dark .q-field__marginal, .q-field--dark .q-field__bottom {
   color: rgba(255, 255, 255, 0.7);
 }
 .q-field--standout .q-field__control {
@@ -2534,11 +2534,11 @@ body.q-ios-padding .q-dialog__inner > div {
 .q-field--standout.q-field--rounded .q-field__control {
   border-radius: 28px;
 }
-.q-field--standout.q-field--focused .q-field__control {
+.q-field--standout.q-field--highlighted .q-field__control {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
   background: #000;
 }
-.q-field--standout.q-field--focused .q-field__native, .q-field--standout.q-field--focused .q-field__prefix, .q-field--standout.q-field--focused .q-field__suffix, .q-field--standout.q-field--focused .q-field__prepend, .q-field--standout.q-field--focused .q-field__append, .q-field--standout.q-field--focused .q-field__input {
+.q-field--standout.q-field--highlighted .q-field__native, .q-field--standout.q-field--highlighted .q-field__prefix, .q-field--standout.q-field--highlighted .q-field__suffix, .q-field--standout.q-field--highlighted .q-field__prepend, .q-field--standout.q-field--highlighted .q-field__append, .q-field--standout.q-field--highlighted .q-field__input {
   color: #fff;
 }
 .q-field--standout.q-field--readonly .q-field__control:before {
@@ -2552,10 +2552,10 @@ body.q-ios-padding .q-dialog__inner > div {
 .q-field--standout.q-field--dark .q-field__control:before {
   background: rgba(255, 255, 255, 0.07);
 }
-.q-field--standout.q-field--dark.q-field--focused .q-field__control {
+.q-field--standout.q-field--dark.q-field--highlighted .q-field__control {
   background: #fff;
 }
-.q-field--standout.q-field--dark.q-field--focused .q-field__native, .q-field--standout.q-field--dark.q-field--focused .q-field__prefix, .q-field--standout.q-field--dark.q-field--focused .q-field__suffix, .q-field--standout.q-field--dark.q-field--focused .q-field__prepend, .q-field--standout.q-field--dark.q-field--focused .q-field__append, .q-field--standout.q-field--dark.q-field--focused .q-field__input {
+.q-field--standout.q-field--dark.q-field--highlighted .q-field__native, .q-field--standout.q-field--dark.q-field--highlighted .q-field__prefix, .q-field--standout.q-field--dark.q-field--highlighted .q-field__suffix, .q-field--standout.q-field--dark.q-field--highlighted .q-field__prepend, .q-field--standout.q-field--dark.q-field--highlighted .q-field__append, .q-field--standout.q-field--dark.q-field--highlighted .q-field__input {
   color: #000;
 }
 .q-field--standout.q-field--dark.q-field--readonly .q-field__control:before {
@@ -3364,9 +3364,6 @@ body.platform-ios .q-layout--containerized {
   -webkit-appearance: none;
   margin: 0;
 }
-.q-pagination .q-btn__wrapper {
-  padding: 0 5px !important;
-}
 
 .q-parallax {
   position: relative;
@@ -3594,9 +3591,6 @@ body.desktop .q-radio--dense:not(.disabled):focus .q-radio__inner:before, body.d
 }
 .q-select--with-input .q-field__control {
   cursor: text;
-}
-.q-select .q-field__native > span:first-child:empty:before {
-  content: " ";
 }
 .q-select .q-field__input {
   min-width: 50px !important;
@@ -6066,6 +6060,9 @@ img.responsive {
 }
 .q-virtual-scroll__content {
   outline: none;
+}
+.q-virtual-scroll__content * {
+  overflow-anchor: none;
 }
 .q-virtual-scroll__padding {
   background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 20%, rgba(128, 128, 128, 0.03) 20%, rgba(128, 128, 128, 0.08) 50%, rgba(128, 128, 128, 0.03) 80%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0)) /* rtl:ignore */;

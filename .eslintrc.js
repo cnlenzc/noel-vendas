@@ -49,6 +49,9 @@ module.exports = {
 
   // add your custom rules here
   rules: {
+    'indent': 'off',
+    'eol-last': 'off',
+    'space-before-function-paren': 'off',
     // allow async-await
     'generator-star-spacing': 'off',
     // allow paren-less arrow functions
