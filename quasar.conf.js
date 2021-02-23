@@ -7,6 +7,8 @@
 // https://quasar.dev/quasar-cli/quasar-conf-js
 /* eslint-env node */
 
+const path = require('path')
+
 module.exports = function (ctx) {
   return {
     // https://quasar.dev/quasar-cli/supporting-ts
@@ -19,7 +21,10 @@ module.exports = function (ctx) {
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/boot-files
     boot: [
-      'axios'
+      'axios',
+      'mixin-global',
+      'quasar-extends',
+      'utils'
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
@@ -86,13 +91,16 @@ module.exports = function (ctx) {
           loader: 'eslint-loader',
           exclude: /node_modules/
         })
+        cfg.resolve.alias = {
+          ...cfg.resolve.alias, // This adds the existing alias
+          utils: path.resolve(__dirname, './src/utils')
+        }
       }
     },
 
     // Full list of options: https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
     devServer: {
       https: false,
-      vueDevtools: true,
       port: 8880,
       open: true // opens browser window automatically
     },
@@ -116,7 +124,11 @@ module.exports = function (ctx) {
       // directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'Dialog',
+        'Loading',
+        'Notify'
+      ]
     },
 
     // animations: 'all', // --- includes all animations

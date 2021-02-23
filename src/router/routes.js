@@ -2,9 +2,23 @@
 const routes = [
   {
     path: '/',
-    component: () => import('layouts/principal.vue'),
+    component: () => import('layouts/layout.vue'),
     children: [
-      { path: '', component: () => import('pages/home.vue') }
+      {
+        name: 'home',
+        path: '',
+        component: () => import('pages/home.vue')
+      },
+      {
+        name: 'produto-list',
+        path: 'produto',
+        component: () => import('pages/produto-list.vue')
+      },
+      {
+        name: 'produto-edit',
+        path: 'produto/:id',
+        component: () => import('pages/produto-edit.vue')
+      }
     ]
   },
 
