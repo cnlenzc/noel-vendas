@@ -44,21 +44,21 @@
 
     methods: {
       async atualizar() {
-        if ((this.$route.params.id || '0') === '0') {
+        if (!this.$route.params.id) {
           this.$set(this.campos, 'datahora_cadastro', new Date())
           this.$set(this.campos, 'unidade', 'UN')
         }
 
         try {
           loading.show()
-          if ((this.$route.params.id || '0') !== '0') {
+          if (this.$route.params.id) {
             const resposta = await backend('get', 'produto/' + this.$route.params.id)
             this.campos = resposta.data
           }
           // const categorias = await backend('get', 'categoria')
           // this.opcoesCategotias = categorias.data.map(c => ({ label: c.nome, value: c.id }))
         } catch (erro) {
-          notifyError('Erro na consulta do produto', erro)
+          notifyError('erro na consulta', erro)
         } finally {
           loading.hide()
         }
@@ -70,13 +70,13 @@
         } else {
           await backend('post', 'produto', this.campos)
         }
-        notifyPositive('Produto salvo com sucesso')
+        notifyPositive('produto salvo com sucesso')
         this.$router.push({ name: 'produto-list' })
       },
 
       async remover() {
         await backend('delete', 'produto/' + this.campos._id)
-        notifyPositive('Produto removido com sucesso')
+        notifyPositive('produto removido com sucesso')
         this.$router.push({ name: 'produto-list' })
       }
     },

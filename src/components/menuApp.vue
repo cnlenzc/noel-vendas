@@ -21,15 +21,24 @@
       listaMenu() {
         return [
         {
-            title: 'Home',
+            title: 'home',
             caption: 'página inicial',
             icon: 'home',
             link: { name: 'home' }
           },
           {
-            title: 'Produtos',
-            caption: 'cadastro',
-            icon: 'school',
+            title: 'clientes',
+            icon: 'people',
+            link: { name: 'contato-list' }
+          },
+          {
+            title: 'vendas',
+            icon: 'shopping_cart',
+            link: { name: 'venda-edit' }
+          },
+          {
+            title: 'produtos',
+            icon: 'card_giftcard',
             link: { name: 'produto-list' }
           }
         ]
