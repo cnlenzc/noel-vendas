@@ -7,7 +7,9 @@
 // https://quasar.dev/quasar-cli/quasar-conf-js
 /* eslint-env node */
 
-const path = require('path')
+const
+  path = require('path'),
+  fse = require('fs-extra')
 
 module.exports = function (ctx) {
   return {
@@ -82,11 +84,23 @@ module.exports = function (ctx) {
       },
 
       beforeBuild({ quasarConf }) {
+        quasarConf.htmlVariables.process.env.buildStart = new Date()
         console.log(new Date().toLocaleString(), 'beforeBuild')
       },
 
-      afterBuild({ quasarConf }) {
+      async afterBuild({ quasarConf }) {
         console.log(new Date().toLocaleString(), 'afterBuild')
+        console.log(`tempo de compilação: ${(new Date() - quasarConf.htmlVariables.process.env.buildStart) / 1000} seg`)
+        try {
+          console.log(`copiando compilado para publicação ...`)
+          const orig = './dist/spa'
+          const dest = '../noel-vendas-dist/dist/spa'
+          await fse.removeSync(dest)
+          await fse.move(orig, dest)
+          console.log(`copiado ok`)
+        } catch (error) {
+          console.error(error)
+        }
       },
 
       // https://quasar.dev/quasar-cli/handling-webpack

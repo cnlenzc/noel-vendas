@@ -59,6 +59,7 @@ module.exports = {
     'one-var': 'off',
     'prefer-promise-reject-errors': 'off',
     'quote-props': 'off',
+    'quotes': 'off',
     'space-before-function-paren': 'off',
 
     'import/first': 'off',
