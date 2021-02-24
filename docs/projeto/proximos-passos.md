@@ -2,12 +2,13 @@
 
 ### proximos passos
 
+* logo
+* data do mongo para dadahora cadastro
 * login
 * autenticacao JWT
 * validação por esquema de dados
-* logo
-* cadastro de contatos
-* vendas
+* campos valor
+* data de nascimento em contato
 
 ### longo prazo
 
