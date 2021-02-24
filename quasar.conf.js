@@ -67,24 +67,30 @@ module.exports = function (ctx) {
       // Options below are automatically set depending on the env, set them if you want to override
       // extractCSS: false,
 
-      beforeDev ({ quasarConf }) {
+      env: {
+        URL_API: ctx.dev
+          ? 'http://localhost:5052/api'
+          : 'https://noel-back.herokuapp.com/api'
+      },
+
+      beforeDev({ quasarConf }) {
         console.log(new Date().toLocaleString(), 'beforeDev')
       },
 
-      afterDev ({ quasarConf }) {
+      afterDev({ quasarConf }) {
         console.log(new Date().toLocaleString(), 'afterDev')
       },
 
-      beforeBuild ({ quasarConf }) {
+      beforeBuild({ quasarConf }) {
         console.log(new Date().toLocaleString(), 'beforeBuild')
       },
 
-      afterBuild ({ quasarConf }) {
+      afterBuild({ quasarConf }) {
         console.log(new Date().toLocaleString(), 'afterBuild')
       },
 
       // https://quasar.dev/quasar-cli/handling-webpack
-      extendWebpack (cfg) {
+      extendWebpack(cfg) {
         cfg.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,

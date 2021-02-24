@@ -1,6 +1,8 @@
 import axios from 'axios'
 
-const baseURL = 'http://localhost:5052/api'
+const baseURL = process.env.URL_API
+  // ? 'http://localhost:5052/api'
+  // : 'https://noel-back.herokuapp.com//api'
 
 const statusHttp = {
   400: 'Dados inválidos',
