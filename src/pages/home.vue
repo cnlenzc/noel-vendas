@@ -19,10 +19,12 @@
 </script>
 
 <style>
-  /* .img-back {
-    background-image: url('img/free-vector-abstract-dots-background.jpg');
+  .img-back {
+    background-image: url('~app/public/img/free-vector-abstract-dots-background.jpg');
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-size: cover;
-  } */
+    height: 100vh;
+    /* width: 100vw; */
+  }
 </style>
