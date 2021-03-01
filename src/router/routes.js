@@ -2,12 +2,26 @@
 const routes = [
   {
     path: '/',
-    component: () => import('layouts/layout.vue'),
+    component: () => import('layouts/layout-nao-autenticado.vue'),
+    redirect: { name: 'login' },
+    children: [
+      {
+        name: 'login',
+        path: 'login',
+        component: () => import('pages/diversos/login.vue')
+      }
+    ]
+  },
+
+  {
+    path: '/',
+    redirect: { name: 'home' },
+    component: () => import('layouts/layout-autenticado.vue'),
     children: [
       {
         name: 'home',
-        path: '',
-        component: () => import('pages/home.vue')
+        path: 'home',
+        component: () => import('pages/diversos/home.vue')
       },
       {
         name: 'produto-list',
@@ -46,7 +60,7 @@ const routes = [
   // but you can also remove it
   {
     path: '*',
-    component: () => import('pages/Error404.vue')
+    component: () => import('pages/diversos/error-404.vue')
   }
 ]
 

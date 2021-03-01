@@ -1,0 +1,18 @@
+.img-back {
+  background-image: url('~app/public/img/free-vector-abstract-dots-background.jpg');
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-size: cover;
+  height: 100vh;
+  /* width: 100vw; */
+}
+
+.u-titulo {
+  font-size: xxx-large;
+}
+
+.u-link {
+  font-size: large;
+  font-weight: bold;
+  color: #1976D2;
+}

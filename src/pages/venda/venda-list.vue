@@ -13,8 +13,8 @@
         <template v-slot:body="props">
           <q-tr :props="props">
             <q-td auto-width>
-              <q-btn size="sm" color="primary" round dense
-                :to="{ name: 'venda-edit', params: { id: props.cols[0].value } }" icon="edit" />
+              <q-btn size="sm" color="primary" round dense :to="{ name: 'venda-edit', params: { id: props.row._id } }"
+                icon="edit" />
             </q-td>
             <q-td v-for="col in props.cols" :key="col.name" :props="props">
               {{ col.value }}
@@ -23,7 +23,7 @@
         </template>
       </q-table>
     </div>
-    <q-btn color="primary" label="adicionar" :to="{ name: 'venda-edit' }" />
+    <q-btn color="primary" label="adicionar" :to="{ name: 'venda-edit' }" no-caps />
   </q-page>
 </template>
 
@@ -36,8 +36,8 @@
         return [
           { name: 'cliente', align: 'left', label: 'cliente', field: 'idCliente', sortable: true },
           { name: 'produto', align: 'left', label: 'produto', field: 'idProduto', sortable: true },
-          { name: 'quantidade', align: 'right', label: 'quantidade', field: 'quantidade', sortable: true, format: format.decimal },
-          { name: 'datahora_cadastro', align: 'left', label: 'cadastro', field: 'datahora_cadastro', sortable: true, format: format.datetime }
+          { name: 'quantidade', align: 'right', label: 'quantidade', field: 'quantidade', sortable: true, format: $format.decimal },
+          { name: 'datahora_cadastro', align: 'left', label: 'cadastro', field: 'datahora_cadastro', sortable: true, format: $format.datetime }
         ]
       }
     },
@@ -51,13 +51,13 @@
     methods: {
       async atualizar() {
         try {
-          loading.show()
-          const resposta = await backend('get', 'venda')
+          $loading.show()
+          const resposta = await $backend('get', 'venda')
           this.lista = resposta.data.map(p => ({ ...p, categoria_nome: (p.categoria || {}).nome || '' }))
         } catch (erro) {
-          notifyError('erro na consulta', erro)
+          $notifyError('erro na consulta', erro)
         } finally {
-          loading.hide()
+          $loading.hide()
         }
       }
     },

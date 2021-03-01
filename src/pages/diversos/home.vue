@@ -1,5 +1,5 @@
 <template>
-  <q-page padding>
+  <q-page>
     <div class="q-pa-md q-gutter-sm img-back">
       <q-btn no-caps style="height: 100px; width: 100px;" color="primary" stack label="clientes" icon="people"
         :to="{ name: 'contato-list' }" />
@@ -17,14 +17,3 @@
     name: 'home'
   }
 </script>
-
-<style>
-  .img-back {
-    background-image: url('~app/public/img/free-vector-abstract-dots-background.jpg');
-    background-repeat: no-repeat;
-    /* background-attachment: fixed; */
-    background-size: cover;
-    height: 100vh;
-    /* width: 100vw; */
-  }
-</style>

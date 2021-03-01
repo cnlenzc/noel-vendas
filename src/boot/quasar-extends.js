@@ -27,7 +27,7 @@ export default ({ Vue }) => {
     return $q.notify({ message, type: 'positive' })
   }
 
-  global.loading = $q.loading
-  global.notifyError = $q.notifyError
-  global.notifyPositive = $q.notifyPositive
+  global.$loading = $q.loading
+  global.$notifyError = $q.notifyError
+  global.$notifyPositive = $q.notifyPositive
 }

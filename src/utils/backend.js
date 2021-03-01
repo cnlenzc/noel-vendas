@@ -5,8 +5,8 @@ const baseURL = process.env.URL_API
   // : 'https://noel-back.herokuapp.com//api'
 
 const statusHttp = {
-  400: 'Dados inválidos',
-  404: 'Informação não encontrada no servidor'
+  400: 'dados inválidos',
+  404: 'informação não encontrada no servidor'
 }
 
 export default async function (method, url, data) {
@@ -27,8 +27,8 @@ export default async function (method, url, data) {
     // trata-se aqui todos os erros com http status diferente de sucesso
     if (!sucesso) {
       const mensagem = statusHttp[resposta.status] || 'Ops! Ocorreu um erro no servidor'
-      console.error('Erro retornado pelo backend\n', JSON.stringify(resposta.data, 0, 2))
-      verificarErro(true, mensagem)
+      console.error('erro retornado pelo backend\n', JSON.stringify(resposta.data, 0, 2))
+      $verificarErro(true, mensagem)
     }
 
     return resposta
@@ -40,15 +40,15 @@ export default async function (method, url, data) {
 
     if (erro.name === 'Error') {
       // erro quando o usuário esta sem internet
-      verificarErro(erro.message === 'Network Error',
-        'Sem internet ou erro de comunicação!')
+      $verificarErro(erro.message === 'Network Error',
+        'sem internet ou erro de comunicação!')
 
       // aqui aparece erros de timeout quando servidor nao responde
-      verificarErro(erro.message.startsWith('timeout of '),
-        'Tempo limite esgotado ao aguardar a conexão!')
+      $verificarErro(erro.message.startsWith('timeout of '),
+        'tempo limite esgotado ao aguardar a conexão!')
     }
 
     // aqui aparece outros erros quando servidor nao responde
-    verificarErro(true, 'Falha no acesso ao servidor! ' + erro.toString())
+    $verificarErro(true, 'Falha no acesso ao servidor! ' + erro.toString())
   }
 }

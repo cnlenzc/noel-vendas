@@ -36,18 +36,18 @@ module.exports = {
   ],
 
   globals: {
+    $backend: true,
+    $format: true,
+    $loading: true,
+    $notifyError: true,
+    $notifyPositive: true,
+    $verificarErro: true,
     Capacitor: true,
     __statics: true,
-    backend: true,
     chrome: true,
     cordova: true,
-    format: true,
     ga: true, // Google Analytics
-    loading: true,
-    notifyError: true,
-    notifyPositive: true,
-    process: true,
-    verificarErro: true
+    process: true
   },
 
   // add your custom rules here
