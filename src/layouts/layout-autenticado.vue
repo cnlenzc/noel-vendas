@@ -41,12 +41,12 @@
     },
 
     created() {
-      console.log('this.usuarioVisivel', this.usuarioVisivel)
+      // console.log('this.usuarioVisivel', this.usuarioVisivel)
       this.usuarioVisivel = false
     },
 
     mounted() {
-      console.log('this.usuarioVisivel', this.usuarioVisivel)
+      // console.log('this.usuarioVisivel', this.usuarioVisivel)
       this.usuarioVisivel = false
     }
   }

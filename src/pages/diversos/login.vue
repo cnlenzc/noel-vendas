@@ -2,7 +2,7 @@
   <q-page>
     <div class="img-back flex flex-center">
       <div class="row bg-white q-pa-lg" style="max-width: 400px">
-        <q-form @submit="tryLoading(entrar)">
+        <q-form @submit="$tryLoading(entrar)">
           <div class="row items-baseline q-gutter-sm">
             <div class="u-titulo">entrar</div>
             <q-input v-model="usuario" label="usuario" class="col-12" outlined autofocus

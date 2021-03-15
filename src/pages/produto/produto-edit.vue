@@ -5,7 +5,7 @@
         <div class="col text-h5">produto</div>
         <div class="col-auto"># {{ campos._id }}</div>
       </div>
-      <q-form @submit="tryLoading(salvar)" class="q-gutter-sm">
+      <q-form @submit="$tryLoading(salvar)" class="q-gutter-sm">
         <div class="row items-baseline">
           <q-input v-model="campos.descricao" label="descrição" class="col-12" outlined autofocus lazy-rules
             :rules="[ $rules.obrigatorio ]" />
@@ -22,7 +22,7 @@
         </div>
         <div>
           <q-btn label="salvar" type="submit" color="primary" no-caps />
-          <q-btn v-if="campos._id" label="remover" color="negative" class="q-ml-sm" @click="tryLoading(remover)"
+          <q-btn v-if="campos._id" label="remover" color="negative" class="q-ml-sm" @click="$tryLoading(remover)"
             no-caps />
           <q-btn label="voltar" color="primary" flat class="q-ml-sm" :to="{ name: 'produto-list' }" no-caps />
         </div>

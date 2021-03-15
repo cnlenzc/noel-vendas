@@ -1,30 +1,31 @@
+
+const $tryCatch = async function (callback, message, args) {
+  try {
+    await callback(args)
+  } catch (erro) {
+    $notifyError(message || 'Ops! Ocorreu um erro', erro)
+  }
+}
+
+const $tryLoading = async function (callback, message, args) {
+  try {
+    $loading.show()
+    await callback(args)
+  } catch (erro) {
+    $notifyError(message || 'Ops! Ocorreu um erro', erro)
+  } finally {
+    $loading.hide()
+  }
+}
+
 export default ({ Vue }) => {
   Vue.mixin({
     methods: {
-      async tryCatch(callback, param) {
-        try {
-          await callback(param)
-        } catch (erro) {
-          const mensagem = !!param && typeof param === 'object' && !!param.erro
-            ? param.erro
-            : 'Ops! Ocorreu um erro'
-          this.$q.notifyError(mensagem, erro)
-        }
-      },
-
-      async tryLoading(callback, param) {
-        try {
-          this.$q.loading.show()
-          await callback(param)
-        } catch (erro) {
-          const mensagem = !!param && typeof param === 'object' && !!param.erro
-            ? param.erro
-            : 'Ops! Ocorreu um erro'
-          this.$q.notifyError(mensagem, erro)
-        } finally {
-          this.$q.loading.hide()
-        }
-      }
+      $tryCatch,
+      $tryLoading
     }
   })
+
+  global.$tryCatch = $tryCatch
+  global.$tryLoading = $tryLoading
 }
